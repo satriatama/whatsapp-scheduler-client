@@ -8,7 +8,7 @@ export default function Scheduler() {
   const [connectionStatus, setConnectionStatus] = useState('Not connected');
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:3001'); 
+    const ws = new WebSocket('ws://satriatama.me:3001'); 
 
     ws.onmessage = (event) => {
       console.log("Message from server: ", event.data);
