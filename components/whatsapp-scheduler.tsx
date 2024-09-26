@@ -37,7 +37,7 @@ export function WhatsappScheduler() {
     }
 
     try {
-      const response = await fetch("http://satriatama.me:3001/api/send-message", {
+      const response = await fetch("https://satriatama.me:3001/api/send-message", {
         method: "POST",
         body: formData,
       });
