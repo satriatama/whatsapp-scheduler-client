@@ -33,6 +33,14 @@ export default function Scheduler() {
       console.error("WebSocket error: ", error);
     };
 
+    const handleBeforeUnload = () => {
+      if (ws.readyState === WebSocket.OPEN) {
+        ws.close();
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
     return () => {
       ws.close();
     };
